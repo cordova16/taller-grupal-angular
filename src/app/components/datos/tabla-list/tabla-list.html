@@ -1,14 +1,27 @@
-<p>componente tabla list</p>
-<h4>directivas</h4>
-@if(datos.length){
-    <p>No hay datos para mostrar</p>
-}@else {
-    @for(datos of dataSource; track $index){
-        <div> class="Datos">
-             <p><strong>categoria:</strong>{{datos.releaseDate}}</p>
-             <p><strong>descripcion:</strong>{{datos.releaseDate}}</p>
-             <p><strong>precio:</strong>{{datos.budget}}
-        </div>
-    }
+<h3>Tabla de Actividades</h3>
 
+@if (dataSource.length === 0) {
+    <p>No hay datos para mostrar</p>
+} @else {
+    <table class="mi-tabla">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            @for (item of dataSource; track item.id) {
+                <tr>
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.nombre }}</td>
+                    <td>{{ item.categoria }}</td>
+                    <td>${{ item.precio }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

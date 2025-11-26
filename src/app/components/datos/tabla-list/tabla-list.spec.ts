@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TablaList } from './tabla-list';
+import { TablaListComponent } from './tabla-list';
 
 describe('TablaList', () => {
-  let component: TablaList;
-  let fixture: ComponentFixture<TablaList>;
+  let component: TablaListComponent;
+  let fixture: ComponentFixture<TablaListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TablaList]
+      imports: [TablaListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TablaList);
+    fixture = TestBed.createComponent(TablaListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
